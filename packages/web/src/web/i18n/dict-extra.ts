@@ -88,7 +88,7 @@ export const extraEn = {
     paragraphs: [
       "After nearly two decades leading commercial real estate portfolios and advising global corporate clients at top international firms in Bangkok, I relocated to Northern Thailand seeking a more intentional lifestyle surrounded by nature.",
       "However, transitioning to Chiang Rai revealed a distinct gap in the local market: a genuine need for structured, institutional-grade real estate advisory, true transparency, and the standardized systems that property owners and international clients rely on.",
-      "Chiangrai Properties was founded to set a new benchmark for real estate in Northern Thailand by establishing a true, international-standard system. We are building a modernized real estate ecosystem that blends global agency discipline with genuine Northern hospitality—creating a centralized platform where integrity, transparency, and operational excellence come first.",
+      "Chiangrai Properties was founded to set a new benchmark for real estate in Northern Thailand by establishing an international-standard system. We are building a modernized real estate ecosystem that blends global agency discipline with genuine Northern hospitality—creating a centralized platform where integrity, transparency, and operational excellence come first.",
       "Whether you are a landlord wanting professional representation, a co-agent seeking a reliable network, or an expat navigating Northern Thailand’s property landscape, Chiangrai Properties provides the back-of-house structure to make every transaction clean, efficient, and completely transparent.",
     ],
     quote: "We don't just post properties. We build trust, standardize the journey, and deliver global agency standards with authentic local care.",

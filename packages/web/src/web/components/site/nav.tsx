@@ -4,7 +4,6 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, ChevronDown, Menu, Minus, Plus, X } from "lucide-react";
 import { useT } from "../../i18n/context";
 import { TYPE_KEYS } from "../../i18n/dict";
-import { FounderPortrait } from "./founder-portrait";
 
 type MenuKey = "property" | "consult" | "service" | "work" | "about";
 type MenuLink = { to: string; t: string; d?: string };
@@ -228,11 +227,7 @@ export function Header() {
                   <p className="mt-4 font-serif text-[22px] leading-tight group-hover:text-clay">{m.visualiserTitle}</p>
                   <p className="mt-1 text-[13px] text-stone">{m.visualiserDesc}</p>
                 </Link>
-              ) : current.key === "about" ? (
-                <div className="flex aspect-[4/3] items-center justify-center bg-nude/60">
-                  <FounderPortrait className="w-[55%]" />
-                </div>
-              ) : (
+              ) : current.key === "about" ? null : (
                 <div className="aspect-[4/3] overflow-hidden bg-nude">
                   <img
                     src={current.image}
