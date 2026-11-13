@@ -4,6 +4,7 @@ import { useT } from "../../i18n/context";
 import { useSubmitInquiry } from "../../queries/inquiries";
 import { INQUIRY_ERROR, INQUIRY_SUCCESS } from "../../lib/inquiry-feedback";
 import { inquiryFieldName } from "../../../inquiry-fields";
+import { PdpaNotice } from "./pdpa-notice";
 
 type Kind = "listing" | "contact" | "list-property" | "consultation" | "service" | "partner";
 
@@ -104,6 +105,7 @@ export function InquiryForm({
         <textarea name="Message" rows={compact ? 4 : 5} defaultValue={defaultMessage} className="field resize-none" aria-label={t.form.message} />
       </div>
       {submit.isError && <p role="alert" className="text-sm text-red-700">{INQUIRY_ERROR}</p>}
+      <PdpaNotice />
       <button type="submit" disabled={submit.isPending} className={buttonTone === "bronze" ? "inline-flex min-h-13 w-full items-center justify-center gap-3 border border-bronze bg-bronze px-8 py-3.5 text-[16px] font-medium text-ink transition-colors hover:bg-bronze-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze disabled:cursor-wait disabled:opacity-60 md:w-auto" : "btn-ink w-full md:w-auto"}>
         {submit.isPending ? (
           <>

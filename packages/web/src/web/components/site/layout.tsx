@@ -27,7 +27,7 @@ export function Footer() {
     <footer className="mt-32 border-t border-line bg-nude/60 grain">
       <div className="wrap grid gap-12 py-20 md:grid-cols-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,0.8fr)_minmax(0,1.1fr)_minmax(0,1.1fr)_minmax(270px,1.7fr)] lg:gap-6 xl:gap-10">
         <div className="md:col-span-6 lg:col-span-1">
-          <div className="font-serif text-[40px] font-light leading-none">Chiang Rai</div>
+          <div className="font-serif text-[40px] font-light leading-none">ChiangRai</div>
           <div className="eyebrow mt-2 tracking-[0.42em] text-stone">Properties</div>
           <p className="mt-8 max-w-sm text-stone">{t.home.intro}</p>
         </div>
@@ -56,11 +56,11 @@ export function Footer() {
           </ul>
         </div>
         <div className="md:col-span-3 lg:col-span-1">
-          <div className="eyebrow mb-5 text-stone">OTHER SERVICES</div>
+          <div className="eyebrow mb-5 text-stone">{t.legalLinks.otherServices}</div>
           <ul className="space-y-2.5">
-            <li><Link to="/consultancy" className="hover:text-clay">{t.menu.consultancy}</Link></li>
             <li><Link to="/services" className="hover:text-clay">{t.menu.findService}</Link></li>
             <li><Link to="/work-with-us" className="hover:text-clay">{t.menu.workWithUs}</Link></li>
+            <li><Link to="/become-a-co-agent" className="hover:text-clay">{t.coAgent.eyebrow}</Link></li>
             <li><Link to="/about" className="hover:text-clay">{t.story.title}</Link></li>
             <li><Link to="/visualiser" className="hover:text-clay">{t.nav.visualiser}</Link></li>
             <li><Link to="/list-with-us" className="hover:text-clay">{t.nav.list}</Link></li>
@@ -76,9 +76,13 @@ export function Footer() {
         </div>
       </div>
       <div className="wrap flex flex-col justify-between gap-2 border-t border-sand py-6 text-[12px] text-stone md:flex-row">
-        <span>© {new Date().getFullYear()} Chiang Rai Properties. {t.footer.rights}</span>
+        <span>© {new Date().getFullYear()} Chiangrai Properties (CRP). {t.footer.rights}</span>
         <span>{t.footer.disclaimer}</span>
-        <Link to="/admin" className="hover:text-ink">Admin</Link>
+        <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <Link to="/privacy" className="hover:text-ink">{t.legalLinks.privacy}</Link>
+          <Link to="/terms" className="hover:text-ink">{t.legalLinks.terms}</Link>
+          <Link to="/admin" className="hover:text-ink">Admin</Link>
+        </nav>
       </div>
     </footer>
   );

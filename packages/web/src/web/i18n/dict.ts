@@ -1,4 +1,5 @@
 import { extraEn, extraTh } from "./dict-extra";
+import { legalEn, legalTh } from "./dict-legal";
 
 export type Lang = "en" | "th";
 
@@ -6,7 +7,7 @@ export const TYPE_KEYS = ["house", "apartment", "condo", "retail", "commercial",
 export type TypeKey = (typeof TYPE_KEYS)[number];
 
 const en = {
-  brand: "Chiang Rai Properties",
+  brand: "Chiangrai Properties",
   tagline: "Homes, spaces & land in Chiang Rai",
   nav: {
     properties: "Properties",
@@ -48,11 +49,11 @@ const en = {
   viewDetails: "View details",
   viewAll: "View all properties",
   home: {
-    eyebrow: "Independent agency & property consultancy · Chiang Rai",
+    eyebrow: "Independent property agency · Chiang Rai",
     title1: "Your trusted partner for",
     title2: "fine homes, land & spaces in Chiang Rai",
     intro:
-      "Houses, condos, apartments, retail and commercial space, and land across Chiang Rai — chosen with care, priced with honesty, and backed by consultancy that sees the whole picture.",
+      "Houses, condos, apartments, retail and commercial space, and land across Chiang Rai — chosen with care, priced with honesty, and backed by advice that sees the whole picture.",
     segments: "Browse by segment",
     newListings: "New listings",
     newListingsSub: "Recently added across Chiang Rai",
@@ -72,7 +73,7 @@ const en = {
     founderCta: "About us",
     ownerTitle: "Thinking of selling or renting out your property?",
     ownerBody:
-      "Let Chiang Rai Properties find the right buyer or tenant — fast, transparent and without the hassle. From pricing guidance to paperwork, we handle the full process for local and overseas owners alike.",
+      "Let Chiangrai Properties (CRP) find the right buyer or tenant — fast, transparent and without the hassle. From pricing guidance to paperwork, we handle the full process for local and overseas owners alike.",
     ownerCta: "List your property",
     faqTitle: "Chiang Rai real estate — frequently asked questions",
   },
@@ -270,13 +271,14 @@ const en = {
   },
   chat: { whatsapp: "WhatsApp", line: "LINE" },
   ...extraEn,
+  ...legalEn,
 };
 
 export type Dict = typeof en;
 
 const th: Dict = {
   ...en,
-  brand: "Chiang Rai Properties",
+  brand: "Chiangrai Properties",
   tagline: "บ้าน พื้นที่ และที่ดินในเชียงราย",
   nav: {
     properties: "อสังหาฯ",
@@ -318,7 +320,7 @@ const th: Dict = {
   viewDetails: "ดูรายละเอียด",
   viewAll: "ดูอสังหาฯ ทั้งหมด",
   home: {
-    eyebrow: "ตัวแทนอิสระและที่ปรึกษาอสังหาริมทรัพย์ · เชียงราย",
+    eyebrow: "ตัวแทนอสังหาริมทรัพย์อิสระ · เชียงราย",
     title1: "พันธมิตรที่คุณไว้วางใจ",
     title2: "เพื่อบ้าน ที่ดิน และพื้นที่คุณภาพในเชียงราย",
     intro:
@@ -499,6 +501,7 @@ const th: Dict = {
   },
   chat: { whatsapp: "WhatsApp", line: "LINE" },
   ...extraTh,
+  ...legalTh,
 };
 
 export const dicts: Record<Lang, Dict> = { en, th };

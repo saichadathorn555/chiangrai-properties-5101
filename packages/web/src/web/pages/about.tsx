@@ -39,7 +39,7 @@ export default function AboutPage() {
           ))}
         </div>
         <div className="mt-16 flex flex-wrap gap-4">
-          <Link to="/consultancy" className="btn-ink">{t.nav.consultancy}</Link>
+          <Link to="/properties" className="btn-ink">{t.menu.findProperty}</Link>
           <Link to="/contact" className="btn-line">{t.nav.contact}</Link>
         </div>
       </section>

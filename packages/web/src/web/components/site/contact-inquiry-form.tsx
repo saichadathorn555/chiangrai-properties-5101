@@ -3,6 +3,7 @@ import { Check, ChevronDown, Loader2 } from "lucide-react";
 import { useSubmitInquiry } from "../../queries/inquiries";
 import { useT } from "../../i18n/context";
 import { INQUIRY_ERROR, INQUIRY_SUCCESS } from "../../lib/inquiry-feedback";
+import { PdpaNotice } from "./pdpa-notice";
 
 const countries = [
   ["TH", "🇹🇭", "+66", "Thailand"],
@@ -128,6 +129,7 @@ export function ContactInquiryForm({ consultationServices, submitLabel }: { cons
       </div>}
       <textarea name="Message" aria-label="Message" placeholder="Message" required maxLength={5000} rows={5} className={`${field} block resize-y`} />
       {submit.isError && <p role="alert" className="text-sm text-red-700">{INQUIRY_ERROR}</p>}
+      <PdpaNotice />
       <button type="submit" disabled={submit.isPending} className="inline-flex min-h-13 w-full items-center justify-center gap-3 border border-bronze bg-bronze px-8 py-3.5 text-[16px] font-medium text-ink transition-colors hover:bg-bronze-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze disabled:cursor-wait disabled:opacity-60 sm:w-auto">
         {submit.isPending ? <><Loader2 className="size-4 animate-spin" />{t.form.sending}</> : (submitLabel ?? "Submit Enquiry")}
       </button>

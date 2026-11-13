@@ -110,31 +110,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CONSULTANCY */}
-      <section className="mt-28 bg-nude/70 grain md:mt-36">
-        <div className="wrap grid items-center gap-12 py-20 md:grid-cols-12 md:py-28">
-          <div className="md:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img src="/images/consult.jpg" alt="" loading="lazy" className="size-full object-cover" />
-            </div>
-          </div>
-          <div className="md:col-span-6 md:col-start-7">
-            <p className="eyebrow text-clay">{t.home.consultEyebrow}</p>
-            <h2 className="display translated-heading mt-5 [--heading-size:44px] md:[--heading-size:64px]">{t.home.consultTitle}</h2>
-            <p className="mt-6 max-w-lg text-[17px] text-ink/75">{t.home.consultBody}</p>
-            <ul className="mt-10 divide-y divide-sand border-y border-sand">
-              {t.consult.services.slice(0, 4).map((s, i) => (
-                <li key={s.t} className="flex gap-6 py-4">
-                  <span className="font-serif text-clay">0{i + 1}</span>
-                  <span>{s.t}</span>
-                </li>
-              ))}
-            </ul>
-            <Link to="/consultancy" className="btn-ink mt-10">{t.home.consultCta}</Link>
-          </div>
-        </div>
-      </section>
-
       {/* AI VISUALISER */}
       <section className="wrap mt-28 md:mt-36">
         <div className="grid items-end gap-10 md:grid-cols-12">

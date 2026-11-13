@@ -202,7 +202,7 @@ export default function VisualiserPage() {
               <p className="font-serif text-[24px]">{t.visual.help}</p>
               <div className="flex gap-3">
                 <button onClick={() => gen.reset()} className="btn-line"><RotateCcw className="size-3.5" />{t.visual.again}</button>
-                <Link to="/consultancy#book" className="btn-ink">{t.visual.helpCta}</Link>
+                <Link to="/contact" className="btn-ink">{t.visual.helpCta}</Link>
               </div>
             </div>
           )}

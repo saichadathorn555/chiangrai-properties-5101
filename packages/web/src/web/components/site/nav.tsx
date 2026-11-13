@@ -5,7 +5,7 @@ import { ArrowRight, ChevronDown, Menu, Minus, Plus, X } from "lucide-react";
 import { useT } from "../../i18n/context";
 import { TYPE_KEYS } from "../../i18n/dict";
 
-type MenuKey = "property" | "consult" | "service" | "work" | "about";
+type MenuKey = "property" | "service" | "work" | "about";
 type MenuLink = { to: string; t: string; d?: string };
 // Restore when service offerings launch; keeps the underlying page/menu definition intact.
 const SERVICE_NAV_VISIBLE = false;
@@ -29,7 +29,7 @@ function LangToggle({ className = "" }: { className?: string }) {
 
 function Wordmark() {
   return (
-    <Link to="/" className="group flex flex-col items-start leading-none" aria-label="Chiang Rai Properties — Home">
+    <Link to="/" className="group flex flex-col items-start leading-none" aria-label="Chiangrai Properties (CRP) — Home">
       <img src="/images/logo-chiangrai-terracotta.png" alt="Chiangrai Properties" width={668} height={668} className="size-[116px] object-contain md:size-[140px]" />
     </Link>
   );
@@ -45,7 +45,6 @@ function useMenus() {
 
   const items: { key: MenuKey; label: string; to: string; desc: string; links: MenuLink[]; image: string; all?: MenuLink }[] = [
     { key: "property", label: m.findProperty, to: "/properties", desc: m.findPropertyDesc, links: [], image: "/images/mockup-cafe.jpg" },
-    { key: "consult", label: m.consultancy, to: "/consultancy", desc: m.consultancyDesc, links: m.consultLinks, image: "/images/consult.jpg" },
     {
       key: "service",
       label: m.findService,
