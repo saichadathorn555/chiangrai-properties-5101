@@ -219,13 +219,9 @@ export function Header() {
 
             <div className="col-span-3">
               {current.key === "property" ? (
-                <Link to="/visualiser" onClick={close} className="group block">
-                  <div className="aspect-[4/3] overflow-hidden bg-nude">
-                    <img src={current.image} alt="" className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                  </div>
-                  <p className="mt-4 font-serif text-[22px] leading-tight group-hover:text-clay">{m.visualiserTitle}</p>
-                  <p className="mt-1 text-[13px] text-stone">{m.visualiserDesc}</p>
-                </Link>
+                <div className="aspect-[4/3] overflow-hidden bg-nude">
+                  <img src={current.image} alt="" className="size-full object-cover" />
+                </div>
               ) : current.key === "about" ? null : (
                 <div className="aspect-[4/3] overflow-hidden bg-nude">
                   <img
@@ -257,9 +253,6 @@ export function Header() {
                   <div className="grid grid-cols-2 gap-6">
                     <MobileGroup title={m.buy} links={[{ to: "/properties?deal=sale", t: m.allSale }, ...sale]} onClick={close} />
                     <MobileGroup title={m.rent} links={[{ to: "/properties?deal=rent", t: m.allRent }, ...rent]} onClick={close} />
-                    <Link to="/visualiser" onClick={close} className="col-span-2 flex items-center justify-between border-t border-line pt-4 text-clay">
-                      {t.nav.visualiser} <ArrowRight className="size-4" />
-                    </Link>
                   </div>
                 ) : (
                   <MobileGroup links={[...(it.key === "service" ? [{ to: "/services", t: m.allServices }] : []), ...it.links]} onClick={close} />

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { useT } from "../../i18n/context";
 import { SITE, lineHref, whatsappHref } from "../../lib/site";
+import { SocialIcons } from "./social-icons";
 import { Header } from "./nav";
 
 export function WhatsAppIcon({ className = "size-4" }: { className?: string }) {
@@ -58,12 +59,10 @@ export function Footer() {
         <div className="md:col-span-3 lg:col-span-1">
           <div className="eyebrow mb-5 text-stone">{t.legalLinks.otherServices}</div>
           <ul className="space-y-2.5">
-            <li><Link to="/services" className="hover:text-clay">{t.menu.findService}</Link></li>
-            <li><Link to="/work-with-us" className="hover:text-clay">{t.menu.workWithUs}</Link></li>
-            <li><Link to="/become-a-co-agent" className="hover:text-clay">{t.coAgent.eyebrow}</Link></li>
-            <li><Link to="/about" className="hover:text-clay">{t.story.title}</Link></li>
-            <li><Link to="/visualiser" className="hover:text-clay">{t.nav.visualiser}</Link></li>
             <li><Link to="/list-with-us" className="hover:text-clay">{t.nav.list}</Link></li>
+            <li><Link to="/become-a-co-agent" className="hover:text-clay">{t.coAgent.eyebrow}</Link></li>
+            <li><Link to="/work-with-us" className="hover:text-clay">{t.menu.workWithUs}</Link></li>
+            <li><Link to="/about" className="hover:text-clay">{t.story.title}</Link></li>
           </ul>
         </div>
         <div className="min-w-0 md:col-span-3 lg:col-span-1">
@@ -75,6 +74,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
+      <div className="wrap pb-8"><SocialIcons /></div>
       <div className="wrap flex flex-col justify-between gap-2 border-t border-sand py-6 text-[12px] text-stone md:flex-row">
         <span>© {new Date().getFullYear()} Chiangrai Properties (CRP). {t.footer.rights}</span>
         <span>{t.footer.disclaimer}</span>

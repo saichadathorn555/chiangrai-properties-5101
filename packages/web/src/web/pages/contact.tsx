@@ -1,8 +1,7 @@
 import { useT } from "../i18n/context";
 import { ContactInquiryForm } from "../components/site/contact-inquiry-form";
-import { SITE, lineHref, whatsappHref } from "../lib/site";
-import { WhatsAppIcon } from "../components/site/layout";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { SITE, lineHref } from "../lib/site";
+import { SocialIcons } from "../components/site/social-icons";
 
 export default function ContactPage() {
   const { t } = useT();
@@ -27,15 +26,7 @@ export default function ContactPage() {
             </a>
             <figcaption className="mt-2 text-[11px] text-stone">Scan or tap to chat on LINE</figcaption>
           </figure>
-          <nav aria-label="Social media" className="flex items-center gap-3 text-[#C3A38A]">
-            {([{ label: "Facebook", Icon: Facebook }, { label: "Instagram", Icon: Instagram }, { label: "LinkedIn", Icon: Linkedin }]).map(({ label, Icon }) => (
-              // oxlint-disable-next-line jsx-a11y/anchor-is-valid -- User explicitly requested temporary # placeholder links.
-              <a key={label} href="#" aria-label={`${label} (placeholder)`} title={`${label} — coming soon`} className="grid size-10 place-items-center transition-colors hover:text-[#B89270] focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#B89270]"><Icon className="size-[23px]" strokeWidth={1.25} /></a>
-            ))}
-            <a href={whatsappHref()} target="_blank" rel="noreferrer" aria-label="Chat with Chiangrai Properties on WhatsApp Business" title="WhatsApp Business" className="grid size-10 place-items-center transition-colors hover:text-[#B89270] focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#B89270]">
-              <WhatsAppIcon className="size-[23px]" />
-            </a>
-          </nav>
+          <SocialIcons />
         </div>
         <div className="min-w-0 md:col-span-7 md:col-start-6">
           <ContactInquiryForm />

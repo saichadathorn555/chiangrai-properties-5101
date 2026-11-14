@@ -1,4 +1,4 @@
-/** Navigation + the Find a Service / Join Us / My Story pages. Merged into dict.ts. */
+/** Navigation + the Find a Service / Join Us / Our Story pages. Merged into dict.ts. */
 
 export const extraEn = {
   menu: {
@@ -32,7 +32,7 @@ export const extraEn = {
     aboutUs: "About Us",
     aboutUsDesc: "The person and the principles behind Chiangrai Properties.",
     aboutLinks: [
-      { to: "/about", t: "My story", d: "Why I started Chiangrai Properties" },
+      { to: "/about", t: "Our Story", d: "Why I started Chiangrai Properties" },
       { to: "/about#values", t: "What we stand for", d: "Expertise, integrity, client-first" },
       { to: "/contact", t: "Contact", d: "Visit, call, WhatsApp or LINE" },
     ],
@@ -82,7 +82,7 @@ export const extraEn = {
     submit: "Send",
   },
   story: {
-    title: "My story",
+    title: "Our Story",
     lead: "A personal approach to property in Chiang Rai.",
     bold: "Chiangrai Properties was founded to set a new benchmark for real estate in Northern Thailand",
     paragraphs: [
@@ -129,7 +129,7 @@ export const extraTh: Extra = {
     aboutUs: "เกี่ยวกับเรา",
     aboutUsDesc: "ตัวตนและหลักการเบื้องหลัง Chiangrai Properties",
     aboutLinks: [
-      { to: "/about", t: "เรื่องราวของฉัน", d: "จุดเริ่มต้นของ Chiangrai Properties" },
+      { to: "/about", t: "เรื่องราวของเรา", d: "จุดเริ่มต้นของ Chiangrai Properties" },
       { to: "/about#values", t: "สิ่งที่เรายึดมั่น", d: "ความเชี่ยวชาญ ความซื่อตรง ลูกค้าเป็นศูนย์กลาง" },
       { to: "/contact", t: "ติดต่อเรา", d: "แวะมา โทร WhatsApp หรือ LINE" },
     ],
@@ -179,7 +179,7 @@ export const extraTh: Extra = {
     submit: "ส่ง",
   },
   story: {
-    title: "เรื่องราวของฉัน",
+    title: "เรื่องราวของเรา",
     lead: "อสังหาฯ ในเชียงราย ด้วยความใส่ใจเป็นรายบุคคล",
     bold: "Chiangrai Properties ก่อตั้งขึ้นเพื่อสร้างมาตรฐานใหม่ให้กับวงการอสังหาริมทรัพย์ในภาคเหนือของไทย",
     paragraphs: [
