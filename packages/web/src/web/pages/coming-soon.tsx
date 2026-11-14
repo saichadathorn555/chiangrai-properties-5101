@@ -3,7 +3,7 @@ import { ArrowRight, Check, Loader2 } from "lucide-react";
 
 function BrandMark() {
   return (
-    <img src="/images/logo-chiangrai-gold.png" alt="Chiangrai Properties" className="launch-logo border-0! object-contain" />
+    <img src="/images/crp-logo-circle.png" alt="Chiangrai Properties" className="launch-logo border-0! object-contain" />
   );
 }
 
@@ -83,7 +83,7 @@ export default function ComingSoonPage() {
         <section className="launch-hero" aria-labelledby="launch-title">
           <div className="launch-hero-copy">
             <p className="launch-eyebrow">Homes · Spaces · Land</p>
-            <h1 id="launch-title">COMING <span>SOON</span></h1>
+            <h1 id="launch-title">LAUNCHING <span>SOON</span></h1>
             <div className="launch-hero-foot"><span aria-hidden /> Chiang Rai, Thailand</div>
           </div>
         </section>
@@ -91,7 +91,7 @@ export default function ComingSoonPage() {
         <section className="launch-lower" aria-label="Launch updates">
           <div className="launch-message">
             <span className="launch-eyebrow">Something good is taking shape</span>
-            <h2>We are almost ready<br />to Launch!</h2>
+            <h2>We are almost ready<br />to <span className="launch-gold">Launch!</span></h2>
             <p>Thoughtful places. Honest advice.<br />A fresh perspective on Chiang Rai.</p>
           </div>
           <div className="launch-signup">

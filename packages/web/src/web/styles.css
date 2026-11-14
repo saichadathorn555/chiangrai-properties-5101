@@ -115,7 +115,7 @@ html[lang="th"] .navtop { letter-spacing: 0; font-size: 14px; }
 .launch-hero { position: relative; display: grid; align-items: center; justify-items: center; min-height: 0; text-align: center; }
 .launch-eyebrow { display: block; font-size: 10px; line-height: 1.6; text-transform: uppercase; letter-spacing: .22em; color: #877352; }
 .launch-hero-copy { width: 100%; padding: 14px 0 20px; }
-.launch-hero h1 { margin: 10px 0 0; font-family: var(--font-serif); font-weight: 700; font-size: clamp(54px, min(8.8vw, 15vh), 138px); letter-spacing: -.025em; line-height: 1.08; white-space: nowrap; color: #302820; text-shadow: 0 2px 18px #fbf8f4e6, 0 0 42px #fbf8f4cc; }
+.launch-hero h1 { margin: 10px 0 0; font-family: var(--font-serif); font-weight: 700; font-size: clamp(54px, min(8.8vw, 15vh), 138px); letter-spacing: -.025em; line-height: 1.08; color: #927144; text-shadow: 0 2px 18px #fbf8f4e6, 0 0 42px #fbf8f4cc; }
 .launch-hero h1 > span { color: #927144; }
 .launch-hero-foot { display: flex; align-items: center; justify-content: center; gap: 13px; margin-top: 16px; font-size: 10px; color: #756b60; text-transform: uppercase; letter-spacing: .2em; }
 .launch-hero-foot > span { width: 34px; height: 1px; background: #ae946b; }
@@ -235,3 +235,11 @@ html[lang="th"] .navtop { letter-spacing: 0; font-size: 14px; }
   .launch-footer { padding-bottom: 60px; }
   .launch-email-row input { font-size: 16px; }
 }
+
+/* Coming Soon: round CRP badge top-left; gold accents. */
+.launch-gold { color: #927144; }
+.launch-header { margin-left: calc(20px - 6vw); }
+.launch-logo { width: 75px; height: 75px; padding: 0; border: 0; border-radius: 50%; }
+@media (max-width: 1000px) { .launch-header { margin-left: calc(16px - 5vw); } }
+@media (max-height: 650px) and (min-width: 641px) { .launch-logo { width: 62px; height: 62px; } }
+@media (max-width: 640px) and (orientation: portrait) { .launch-header { margin-left: -10px; } .launch-logo { width: 56px; height: 56px; } }
