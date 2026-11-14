@@ -5,7 +5,7 @@ import { ArrowRight, ChevronDown, Menu, Minus, Plus, X } from "lucide-react";
 import { useT } from "../../i18n/context";
 import { TYPE_KEYS } from "../../i18n/dict";
 
-type MenuKey = "property" | "service" | "work" | "about";
+type MenuKey = "property" | "insights" | "service" | "work" | "about";
 type MenuLink = { to: string; t: string; d?: string };
 // Restore when service offerings launch; keeps the underlying page/menu definition intact.
 const SERVICE_NAV_VISIBLE = false;
@@ -45,6 +45,19 @@ function useMenus() {
 
   const items: { key: MenuKey; label: string; to: string; desc: string; links: MenuLink[]; image: string; all?: MenuLink }[] = [
     { key: "property", label: m.findProperty, to: "/properties", desc: m.findPropertyDesc, links: [], image: "/images/mockup-cafe.jpg" },
+    {
+      // English-only for now (draft sample section).
+      key: "insights",
+      label: "Insight & Market",
+      to: "/insights/market-review-q4-2026",
+      desc: "Research and perspectives on the Chiang Rai property market.",
+      links: [
+        { to: "/insights/market-review-q4-2026", t: "Latest Research", d: "Chiang Rai Property Market Review Q4 2026" },
+        { to: "/insights/trending-topic", t: "Trending Topic", d: "Coming soon" },
+      ],
+      image: "/images/commercial-2.jpg",
+      all: { to: "/insights/market-review-q4-2026", t: "Latest Research" },
+    },
     {
       key: "service",
       label: m.findService,
@@ -135,7 +148,7 @@ export function Header() {
             <ul className="flex items-center gap-x-5 xl:gap-x-9">
               {items.map((it) => {
                 const isOpen = active === it.key;
-                const isHere = path === it.to || (it.key === "property" && path.startsWith("/propert"));
+                const isHere = path === it.to || (it.key === "property" && path.startsWith("/propert")) || (it.key === "insights" && path.startsWith("/insights"));
                 return (
                   <li key={it.key} className="relative" onMouseEnter={() => setActive(it.key)}>
                     <div className="flex items-center">
@@ -163,7 +176,7 @@ export function Header() {
       <nav aria-label="Sections" className="no-scrollbar overflow-x-auto border-t border-line lg:hidden">
         <ul className="wrap flex w-max min-w-full items-center justify-between gap-x-6">
           {[...items.map((i) => ({ to: i.to, label: i.label, key: i.key })), { to: "/contact", label: m.contact, key: "contact" }].map((i) => {
-            const here = path === i.to || (i.key === "property" && path.startsWith("/propert"));
+            const here = path === i.to || (i.key === "property" && path.startsWith("/propert")) || (i.key === "insights" && path.startsWith("/insights"));
             return (
               <li key={i.key}>
                 <Link to={i.to} className={`navtop block py-3.5 ${here ? "text-clay" : "text-ink"}`}>

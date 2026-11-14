@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Plus, Minus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { HomeFilters, type HomeSelection } from "../components/site/home-filters";
 import { FounderPortrait } from "../components/site/founder-portrait";
 import { useT } from "../i18n/context";
@@ -61,20 +61,8 @@ export default function Index() {
         </div>
       </section>
       <section className="wrap mt-10 md:mt-12">
-        <div className="relative">
-          <div className="reveal d5 aspect-[16/8] overflow-hidden bg-nude md:aspect-[16/7]">
-            <img src="/images/hero.jpg" alt="Modern home in the hills of Chiang Rai" className="size-full object-cover" />
-          </div>
-          {/* Insight & Market — consultancy-style research entry point */}
-          <div className="reveal d5 mt-4 w-full bg-[#FBF8F4] p-5 md:absolute md:bottom-8 md:left-8 md:mt-0 md:w-[340px] md:p-6 md:shadow-[0_12px_40px_-18px_#2a252266]">
-            <Link to="/insights/market-review-q4-2026" className="group flex items-center justify-between bg-[#927144] px-5 py-3.5 text-[12px] font-medium tracking-[0.18em] text-[#FBF8F4] uppercase transition-colors hover:bg-[#7d5f37]">
-              Insight &amp; Market <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" strokeWidth={1.4} />
-            </Link>
-            <ul className="mt-2 divide-y divide-line text-[14px]">
-              <li><Link to="/insights/market-review-q4-2026" className="flex items-center justify-between py-3 text-ink hover:text-[#927144]">Latest Research <ArrowRight className="size-3.5 text-[#927144]" strokeWidth={1.4} /></Link></li>
-              <li><Link to="/insights/trending-topic" className="flex items-center justify-between py-3 text-ink hover:text-[#927144]">Trending Topic <ArrowRight className="size-3.5 text-[#927144]" strokeWidth={1.4} /></Link></li>
-            </ul>
-          </div>
+        <div className="reveal d5 aspect-[16/8] overflow-hidden bg-nude md:aspect-[16/7]">
+          <img src="/images/hero.jpg" alt="Modern home in the hills of Chiang Rai" className="size-full object-cover" />
         </div>
       </section>
 
