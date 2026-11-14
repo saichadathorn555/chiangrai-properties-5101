@@ -11,6 +11,7 @@ import WorkWithUsPage from "./pages/work-with-us";
 import BecomeCoAgentPage from "./pages/become-a-co-agent";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
+import { MarketReviewPage, TrendingTopicPage } from "./pages/insights";
 import { SiteLayout } from "./components/site/layout";
 
 function NotFound() {
@@ -41,6 +42,8 @@ export default function DraftSite() {
         <Route path="/become-a-co-agent" component={BecomeCoAgentPage} />
         <Route path="/privacy" component={PrivacyPage} />
         <Route path="/terms" component={TermsPage} />
+        <Route path="/insights/market-review-q4-2026" component={MarketReviewPage} />
+        <Route path="/insights/trending-topic" component={TrendingTopicPage} />
         <Route component={NotFound} />
       </Switch>
     </SiteLayout>
