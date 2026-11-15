@@ -94,3 +94,10 @@ export const mockups = sqliteTable("mockups", {
     .notNull()
     .$defaultFn(() => new Date()),
 });
+
+/** Per-article engagement counters for Insight & Market pages. */
+export const articleStats = sqliteTable("article_stats", {
+  slug: text("slug").primaryKey(),
+  views: integer("views").notNull().default(0),
+  likes: integer("likes").notNull().default(0),
+});

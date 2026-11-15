@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Download } from "lucide-react";
+import { EngagementBar } from "../components/site/engagement-bar";
+import { MarketReviewArticle, MarketReviewMeta } from "./market-review-content";
 
-/** English-only draft samples for the Insight & Market section. No figures are published here on purpose. */
-const SECTIONS = ["Residential", "Commercial & Retail", "Land", "Infrastructure & Tourism", "Pros & Cons", "Outlook"];
+/** English-only draft samples for the Insight & Market section. The market review renders the approved draft report text. */
+const TITLE = "Chiang Rai Property Market Review Q4 2026";
 
 function DraftBanner() {
   return (
@@ -32,20 +34,15 @@ function InsightShell({ eyebrow, title, children }: { eyebrow: string; title: st
 
 export function MarketReviewPage() {
   return (
-    <InsightShell eyebrow="Insight & Market · Latest Research" title="Chiang Rai Property Market Review Q4 2026">
-      <p className="mt-6 text-[16px] leading-[1.8] text-stone">An overview of the Chiang Rai property market across residential, commercial, land and related sectors for the fourth quarter of 2026.</p>
+    <InsightShell eyebrow="Insight & Market · Latest Research" title={TITLE}>
+      <MarketReviewMeta />
+      <EngagementBar slug="market-review-q4-2026" title={TITLE} />
       {/* oxlint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder until the PDF is ready. */}
       <a href="#" className="mt-8 inline-flex items-center gap-2.5 bg-[#927144] px-6 py-3.5 text-[12px] font-medium tracking-[0.16em] text-[#FBF8F4] uppercase transition-colors hover:bg-[#7d5f37]">
         <Download className="size-4" strokeWidth={1.5} /> Download PDF
       </a>
-      <div className="mt-14 border-t border-line">
-        {SECTIONS.map((h) => (
-          <section key={h} className="border-b border-line py-8">
-            <h2 className="font-serif text-[26px] leading-tight text-ink md:text-[30px]">{h}</h2>
-            <p className="mt-3 text-[14px] text-stone italic">Content coming soon</p>
-          </section>
-        ))}
-      </div>
+      <MarketReviewArticle />
+      <EngagementBar slug="market-review-q4-2026" title={TITLE} />
     </InsightShell>
   );
 }

@@ -9,6 +9,7 @@ import { setup } from "./routes/setup";
 import { auth } from "./auth";
 import { newsletter } from "./routes/newsletter";
 import { advisors } from "./routes/advisors";
+import { insights } from "./routes/insights";
 
 export const router = {
   ping,
@@ -19,6 +20,7 @@ export const router = {
   setup,
   newsletter,
   advisors,
+  insights,
 };
 
 export type AppRouter = typeof router;
