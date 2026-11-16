@@ -1,6 +1,8 @@
+import { BarChart, ChartGrid, Timeline } from "./report-charts";
+
 /** Full text of "Chiang Rai Property Market Review Q4 2026" (EN), from CRP_Market_Review_Q4_2026_EN_Draft.md.
  * Private-company names are omitted from the article body by request (references list unchanged). */
-const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="mt-16 font-serif text-[28px] leading-tight text-ink md:text-[34px]">{children}</h2>;
+const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="font-serif text-[28px] leading-tight text-ink md:text-[34px]">{children}</h2>;
 const H3 = ({ children }: { children: React.ReactNode }) => <h3 className="mt-10 font-serif text-[22px] leading-tight text-ink md:text-[24px]">{children}</h3>;
 const H4 = ({ children }: { children: React.ReactNode }) => <h4 className="mt-8 text-[13px] font-semibold tracking-[0.12em] text-[#927144] uppercase">{children}</h4>;
 const P = ({ children }: { children: React.ReactNode }) => <p className="mt-4">{children}</p>;
@@ -112,6 +114,7 @@ export function MarketReviewMeta() {
 export function MarketReviewArticle() {
   return (
     <article className="text-[16px] leading-[1.8] text-ink/85">
+      <section className="mt-10 border border-[#DCC8A8] bg-[#F7EFE4] p-5 shadow-[0_1px_0_#fff8] md:p-8">
       <H2>1. Key Takeaways</H2>
       <UL>
         <li><Lead>Renting costs much less in Chiang Rai.</Lead> The median asking rent is THB 13,900 a month, compared with THB 23,800 in Chiang Mai and THB 45,700 in Phuket. Per square metre, rent is about 55% of Chiang Mai's and 24% of Phuket's (CRP calculation, online property listing portal asking prices, 13 Nov 2026).</li>
@@ -121,7 +124,9 @@ export function MarketReviewArticle() {
         <li><Lead>Major infrastructure is under way.</Lead> The Den Chai–Chiang Rai–Chiang Khong double-track railway is 74.076% complete and due to open in 2028. The Chiang Khong Border Trade Service Centre is due in December 2026. Mae Fah Luang Airport has an approved plan to expand capacity from 3 to 6 million passengers a year.</li>
         <li>Two environmental risks need to be stated plainly: seasonal PM2.5 haze (February–April) and arsenic contamination in the Kok, Sai and Ruak rivers, which officials link to suspected upstream mining in Myanmar. Section 4 covers both, together with what the authorities are doing and practical steps for tenants and investors.</li>
       </UL>
+      </section>
 
+      <section className="mt-10 border border-[#DCC8A8] bg-[#F7EFE4] p-5 shadow-[0_1px_0_#fff8] md:p-8">
       <H2>2. Rent &amp; Buy Benchmark: Chiang Rai vs. Chiang Mai &amp; Phuket</H2>
       <Table
         caption="Table 1. Asking rents and asking sale prices (online property listing portal asking prices, 13 Nov 2026)"
@@ -139,6 +144,12 @@ export function MarketReviewArticle() {
         ]}
         note={"Sources: online property listing portal asking prices (13 Nov 2026; links in Section 5). These are asking prices, not completed transactions. CRP makes no price or rent forecasts. The \"all property\" medians include land and large plots, so different mixes are being compared. Use the house and condo rows for like-for-like comparisons."}
       />
+      <ChartGrid>
+        <BarChart title="Rent per month, all property (median, asking)" rows={[{ label: "Chiang Rai", value: 13900, text: "THB 13,900", highlight: true }, { label: "Chiang Mai", value: 23800, text: "THB 23,800" }, { label: "Phuket", value: 45700, text: "THB 45,700" }]} />
+        <BarChart title="Rent per m² per month (median, asking)" rows={[{ label: "Chiang Rai", value: 119, text: "THB 119", highlight: true }, { label: "Chiang Mai", value: 218, text: "THB 218" }, { label: "Phuket", value: 499, text: "THB 499" }]} />
+        <BarChart title="Sale price per m², houses (median, asking)" rows={[{ label: "Chiang Rai", value: 24600, text: "THB 24,600", highlight: true }, { label: "Chiang Mai", value: 30000, text: "THB 30,000" }, { label: "Phuket", value: 73900, text: "THB 73,900" }]} />
+        <BarChart title="Sale price per m², condos (median, asking)" rows={[{ label: "Chiang Rai", value: 45600, text: "THB 45,600", highlight: true }, { label: "Chiang Mai", value: 73600, text: "THB 73,600" }, { label: "Phuket", value: 147000, text: "THB 147,000" }]} note="Chiang Rai condos: 12 listings only." />
+      </ChartGrid>
       <Table
         caption="Table 2. Market context (official data)"
         head={["Indicator", "Chiang Rai", "Chiang Mai", "Phuket", "Source"]}
@@ -149,6 +160,12 @@ export function MarketReviewArticle() {
           ["New-home stock still unsold (H1 2026)", "2,843 units; ~96 months to clear", "11,353 units; ~50 months", "n/a in REIC's Northern report", "REIC"],
         ]}
       />
+      <ChartGrid>
+        <BarChart title="Visitors 2025 (preliminary)" rows={[{ label: "Chiang Rai", value: 6.46, text: "6.46 m", highlight: true }, { label: "Chiang Mai", value: 11.96, text: "11.96 m" }, { label: "Phuket", value: 14.12, text: "14.12 m" }]} />
+        <BarChart title="Hotel occupancy 2025" rows={[{ label: "Chiang Rai", value: 72.1, text: "72.10%", highlight: true }, { label: "Chiang Mai", value: 76.74, text: "76.74%" }, { label: "Phuket", value: 77.23, text: "77.23%" }]} />
+        <BarChart title="New-home stock: months to clear (H1 2026)" rows={[{ label: "Chiang Rai", value: 96, text: "~96 months", highlight: true }, { label: "Chiang Mai", value: 50, text: "~50 months" }]} note="Phuket: n/a in REIC's Northern report." />
+        <BarChart title="Chiang Rai months of stock by segment (REIC)" rows={[{ label: "Mae Sai", value: 37, text: "~37 months" }, { label: "Airport–Mae Fah Luang University", value: 120, text: "~120 months" }, { label: "Condo segment", value: 6, text: "~6 months" }, { label: "All new homes", value: 96, text: "~96 months", highlight: true }]} />
+      </ChartGrid>
 
       <H3>What the numbers mean:</H3>
       <ol className="mt-4 list-decimal space-y-4 pl-6 marker:text-[#927144]">
@@ -164,7 +181,9 @@ export function MarketReviewArticle() {
         <li>New business registrations in the Chiang Rai Special Economic Zone rose 52.38% in H1 2026 (128 vs. 84). This is a rebound from a weak 2025 and is still below the 212 recorded in H1 2023 (Department of Business Development data).</li>
       </UL>
       <P>The other side: most spending comes from the local and domestic market. Average monthly household spending in Chiang Rai was THB 11,346 in 2024 (NSO). The Bank of Thailand expects the Northern economy to grow only 1.1–2.1% in 2026 and describes household purchasing power as fragile. Chiang Rai has amenities and plenty of variety, but its crowds are smaller than in major hubs. <Lead>Our view:</Lead> Chiang Rai is not overbuilt. Demand is real but mainly local, so business tenants should plan around local and Thai customers rather than counting on foreign tourist traffic.</P>
+      </section>
 
+      <section className="mt-10 border border-[#DCC8A8] bg-[#F7EFE4] p-5 shadow-[0_1px_0_#fff8] md:p-8">
       <H2>3. Market Drivers: Infrastructure &amp; Tourism</H2>
       <Table
         caption=""
@@ -179,8 +198,16 @@ export function MarketReviewArticle() {
           ["City identity", "UNESCO Creative City of Design since 2023."],
         ]}
       />
+      <Timeline title="Infrastructure timeline (as stated in the report)" items={[
+        { when: "11 Nov 2026", what: "Ngao tunnel (6,215 m) broke through" },
+        { when: "December 2026", what: "Chiang Khong Border Trade Service Centre expected to open" },
+        { when: "2028", what: "Den Chai–Chiang Rai–Chiang Khong double-track railway target opening" },
+        { when: "2029 to 2033", what: "New airport terminal (sources give different completion years)" },
+      ]} />
       <View><Lead>Our view:</Lead> Of these drivers, only the railway has a firm 2028 opening date. The airport expansion is approved, but its timing is less certain. Foreign tourism is still below its earlier peak, and passenger numbers have not returned to 2019 levels. We see this as a medium- to long-term story for patient investors, not a short-term boom.</View>
+      </section>
 
+      <section className="mt-10 border border-[#DCC8A8] bg-[#F7EFE4] p-5 shadow-[0_1px_0_#fff8] md:p-8">
       <H2>4. Balanced Outlook: Key Strengths, Honest Constraints and Active Mitigation</H2>
       <H3>Strengths</H3>
       <UL>
@@ -194,6 +221,9 @@ export function MarketReviewArticle() {
       <H3>Constraints and how they are being addressed</H3>
       <H4>A. Seasonal PM2.5 haze (mainly February–April)</H4>
       <P><Lead>The facts:</Lead> Thailand's 24-hour PM2.5 standard is 37.5 µg/m³. On 28 Mar 2026, official readings reached 186.1 in Wiang Phang Kham (Mae Sai), 152.2 in Wiang (Chiang Khong) and 94.1 in central Mueang Chiang Rai. That same day, satellites counted 8,804 hotspots in Myanmar and 4,189 in Laos, so much of the smoke crosses the border. Haze affects the whole upper North, including Chiang Mai.</P>
+      <div className="mt-6 md:max-w-xl">
+        <BarChart title="PM2.5 on 28 Mar 2026 (µg/m³)" rows={[{ label: "Wiang Phang Kham (Mae Sai)", value: 186.1, text: "186.1" }, { label: "Wiang (Chiang Khong)", value: 152.2, text: "152.2" }, { label: "Central Mueang Chiang Rai", value: 94.1, text: "94.1" }, { label: "Thailand 24-hour standard", value: 37.5, text: "37.5", highlight: true }]} />
+      </div>
       <P><Lead>Who is acting:</Lead></P>
       <UL>
         <li><Lead>Chiang Rai Province:</Lead> banned all outdoor burning until 10 May 2026, deployed ISOC patrols in high-risk areas, and prepared rainmaking flights. Under its PHEOC emergency system, the public health office prepared clean rooms and monitored vulnerable patients.</li>
@@ -241,7 +271,9 @@ export function MarketReviewArticle() {
       <P>Chiang Rai has fewer listings, slower resale and lower foreign visitor numbers. It suits owner-occupiers and long-term holders best.</P>
 
       <View><Lead>CRP's view:</Lead> Chiang Rai offers lower costs than Chiang Mai and Phuket, a market that is not overbuilt, and transport projects that are visibly under construction. It also has real environmental issues that government agencies are working on and that local people discuss openly. We think informed buyers and tenants who plan around these issues are the ones best placed to benefit from the next stage of the city's growth. (This is CRP's opinion, not a forecast.)</View>
+      </section>
 
+      <section className="mt-10 border border-[#DCC8A8] bg-[#F7EFE4] p-5 shadow-[0_1px_0_#fff8] md:p-8">
       <H2>5. Verified Sources &amp; References</H2>
       <P>All links opened and status-checked on 13 Nov 2026 (Asia/Bangkok).</P>
       {REFS.map((g) => (
@@ -257,6 +289,7 @@ export function MarketReviewArticle() {
           </ol>
         </div>
       ))}
+      </section>
 
       <p className="mt-12 border-t border-line pt-6 text-[13px] leading-relaxed text-stone"><Lead>Disclaimer:</Lead> This report is for general information only. It is not legal, tax or investment advice. Prices are asking prices from a listing portal at a single point in time and may differ from transaction prices. Environmental readings change by season and location; check the latest official PCD and PWA notices.</p>
     </article>

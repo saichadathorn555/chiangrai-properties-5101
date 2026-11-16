@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { EngagementBar } from "../components/site/engagement-bar";
 import { MarketReviewArticle, MarketReviewMeta } from "./market-review-content";
 
@@ -37,10 +37,6 @@ export function MarketReviewPage() {
     <InsightShell eyebrow="Insight & Market · Latest Research" title={TITLE}>
       <MarketReviewMeta />
       <EngagementBar slug="market-review-q4-2026" title={TITLE} />
-      {/* oxlint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder until the PDF is ready. */}
-      <a href="#" className="mt-8 inline-flex items-center gap-2.5 bg-[#927144] px-6 py-3.5 text-[12px] font-medium tracking-[0.16em] text-[#FBF8F4] uppercase transition-colors hover:bg-[#7d5f37]">
-        <Download className="size-4" strokeWidth={1.5} /> Download PDF
-      </a>
       <MarketReviewArticle />
       <EngagementBar slug="market-review-q4-2026" title={TITLE} />
     </InsightShell>
